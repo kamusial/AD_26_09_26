@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv("heart.csv")
+df = pd.read_csv("heart.csv", comment="#")
 print(df.head(10).to_string())
 print(df.target.value_counts())
 
@@ -31,7 +31,7 @@ from sklearn.model_selection import GridSearchCV
 
 model = DecisionTreeClassifier()
 params = {
-    'max_depth': range(3, 14),
+    'max_depth': range(3, 14, 2),
     'max_features': range(5, X_train.shape[1]+1, 2),
     'min_samples_split': [2, 3, 4, 5],
     'criterion': ['gini', 'entropy', 'log_loss']
