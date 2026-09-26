@@ -14,6 +14,9 @@ df.Weight /= 2.2
 df['nowa'] = (df.Height + 6) / df.Weight
 print(df.head(10))
 
+# plt.hist(df.Weight, bins=30)
+# plt.show()
+
 plt.hist(df.query("Gender=='Male'").Weight, bins=30)
 # plt.show()
 plt.hist(df.query("Gender=='Female'").Weight, bins=30)
@@ -26,7 +29,7 @@ plt.show()
 del (df['nowa'])
 
 df = pd.get_dummies(df)
-
+print(df)
 del (df['Gender_Male'])
 df = df.rename(columns={'Gender_Female': 'Gender'})
 print(df)
