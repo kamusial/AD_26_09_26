@@ -6,7 +6,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
 
-df = pd.read_csv('dane\\diabetes.csv')
+df = pd.read_csv('diabetes.csv')
 print(f'Ile danych: {df.shape}')
 print(df.describe().T.to_string())
 print('\nLiczba pustych pól:')
@@ -21,15 +21,15 @@ print(df.isna().sum())
 
 for col in ['glucose', 'bloodpressure', 'skinthickness', 'insulin',
        'bmi', 'diabetespedigreefunction', 'age']:
-    df[col] = df[col].replace(0, np.NaN)
+    df[col] = df[col].replace(0, np.nan)
     mean_ = df[col].mean()
-    df[col].replace(np.NaN, mean_, inplace=True)   # inplace niedługo niewspierane
+    df[col] = df[col].replace(np.nan, mean_)
 
 print('Po czyszczeniu danych')
 print(df.describe().T.to_string())
 print(df.isna().sum())
 
-df.to_csv('dane\\cukrzyca_po_obrobce.csv', sep=';', index=False)
+df.to_csv('cukrzyca_po_obrobce.csv', sep=';', index=False)
 
 
 X = df.iloc[:, :-1]   #wszystkie kolumny, bez ostatniej
@@ -59,10 +59,3 @@ model = LogisticRegression()
 model.fit(X_train, y_train)
 print(model.score(X_test, y_test))
 print(pd.DataFrame(confusion_matrix(y_test, model.predict(X_test))))
-
-
-# def myfun(kolor: str, dzien: int, tydzien) -> str:
-#     pass
-#
-#
-# myfun('czerwony', 'sroda', 'sdf')
