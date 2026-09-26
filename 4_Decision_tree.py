@@ -32,3 +32,39 @@ from mlxtend.plotting import plot_decision_regions
 plot_decision_regions(X.values, y.values, model)
 plt.show()
 
+plt.figure(figsize=(9, 6))
+
+plot_decision_regions(
+    X=X.to_numpy(),
+    y=y.to_numpy(dtype=int),
+    clf=model,
+
+    # Osie: petallength i petalwidth
+    feature_index=[2, 3],
+
+    # Pozostałe cechy ustalamy zgodnie z Twoją próbką
+    filler_feature_values={
+        0: sample[0],  # sepallength = 5.6
+        1: sample[1],  # sepalwidth = 3.2
+    },
+
+    # Pokaż punkty, których pozostałe cechy są blisko przekroju
+    filler_feature_ranges={
+        0: 0.3,  # sepallength w granicach 5.6 ± 0.3
+        1: 0.3,  # sepalwidth w granicach 3.2 ± 0.3
+    },
+    legend=2,
+)
+
+plt.scatter(
+    sample[2], sample[3],
+    color="red", marker="*", s=200,
+    edgecolors="black", label="Twoja próbka",
+)
+
+plt.xlabel("petallength")
+plt.ylabel("petalwidth")
+plt.title("Przekrój: sepallength = 5.6, sepalwidth = 3.2")
+plt.legend()
+plt.show()
+
