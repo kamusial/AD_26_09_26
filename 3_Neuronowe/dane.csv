@@ -1,0 +1,11 @@
+OrderID,Date,Customer,Product,Category,Quantity,UnitPrice,TotalPrice
+1,2025-11-01,John Doe,Smartphone,Electronics,1,599,599
+2,2025-11-01,Jane Smith,Laptop,Electronics,1,1200,1200
+3,2025-11-02,Emily Davis,T-Shirt,Clothing,3,20,60
+4,2025-11-02,Michael Brown,Jeans,Clothing,2,40,80
+5,2025-11-03,Laura Wilson,Headphones,Electronics,1,150,150
+6,2025-11-03,Robert Johnson,Sneakers,Clothing,1,90,90
+7,2025-11-04,Daniel Martinez,Tablet,Electronics,2,300,600
+8,2025-11-04,Sarah Lee,Backpack,Clothing,1,50,50
+9,2025-11-05,Kevin White,Monitor,Electronics,1,250,250
+10,2025-11-05,Amanda Clark,Socks,Clothing,5,5,25

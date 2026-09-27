@@ -30,7 +30,7 @@ plt.ylabel('Inercje')
 plt.grid(True, alpha=0.3)
 plt.show()
 
-k_optymalne = 3
+k_optymalne = 4
 kmeans = KMeans(n_clusters=k_optymalne)
 etykiety = kmeans.fit_predict(X)
 centroidy = kmeans.cluster_centers_
@@ -46,7 +46,7 @@ for i in range(k_optymalne):
     print(f'Klaster {i + 1}: {liczba} próbek')
 
 # Kolory dla różnych klastrów:
-kolory = ['red', 'blue', 'green', 'white', 'black', 'pink', 'yellow', 'orange', 'purple', 'grey']
+kolory = ['red', 'blue', 'green', 'black', 'pink', 'yellow', 'orange', 'purple', 'grey']
 
 # rysowanie punktów dla każdego klastra
 for i in range(k_optymalne):

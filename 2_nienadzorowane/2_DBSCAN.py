@@ -12,12 +12,11 @@ print(f'Liczba próbek: {X.shape[0]}')
 print(f'Cechy: {iris.feature_names[:2]}')
 
 # 2. Ustawienie parametrów i uruchomienie DBSCAN.
-# Zachowujemy oryginalną skalę danych, jak w programie z K-means.
 # eps: promień sąsiedztwa punktu.
 # min_samples: minimum punktów w sąsiedztwie (łącznie z samym punktem),
 # aby punkt był punktem rdzeniowym, od którego można rozszerzać klaster.
 # metric: sposób obliczania odległości między punktami.
-dbscan = DBSCAN(eps=0.3, min_samples=5, metric='euclidean')
+dbscan = DBSCAN(eps=0.3, min_samples=3, metric='euclidean')
 etykiety = dbscan.fit_predict(X)
 
 # 3. Podsumowanie wyników. Etykieta -1 oznacza szum.
