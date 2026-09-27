@@ -5,6 +5,8 @@ from sklearn.datasets import load_iris
 from sklearn.cluster import KMeans
 
 iris = load_iris()
+print(iris)
+print(type(iris))
 X = iris.data[:, :2]   # 2 pierwsze cechy
 
 print('Dane załadowane:')
