@@ -6,8 +6,8 @@ penguins = sns.load_dataset('penguins')
 # print(type(penguins))
 print(penguins.head().to_string())
 
-# sns.pairplot(penguins, hue='species')
-# plt.show()
+sns.pairplot(penguins, hue='species')
+plt.show()
 
 penguins_filtered = penguins.drop(columns=['island', 'sex']).dropna()
 penguins_features = penguins_filtered.drop(columns=['species'])

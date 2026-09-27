@@ -15,7 +15,7 @@ model.add(Dense(1, activation='linear'))
 
 model.compile(optimizer='rmsprop', loss='mse')
 
-result = model.fit(df.F, df.C, epochs=2000)
+result = model.fit(df.F, df.C, epochs=500)
 
 C_pred = model.predict(df.F)
 

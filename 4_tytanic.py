@@ -26,7 +26,7 @@ from sklearn.metrics import (
 SEED = 42                     # Stałe losowanie ułatwia odtworzenie wyniku.
 TEST_SIZE = 0.20               # 20% danych odkładamy na końcowy test.
 CV_FOLDS = 5                   # Liczba części w walidacji krzyżowej.
-POKAZ_WYKRESY = False          # True: otwórz okna wykresów na końcu programu.
+POKAZ_WYKRESY = True         # True: otwórz okna wykresów na końcu programu.
 STYL = 'whitegrid'             # Możesz wybrać też 'white', 'darkgrid', 'ticks'.
 PALETA = 'colorblind'          # Możesz wybrać też 'deep', 'muted', 'Set2'.
 DPI = 180                     # 300 nadaje się do wydruku.
